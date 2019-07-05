@@ -1,0 +1,83 @@
+    <div id="myModal" class="reveal-modal"> 
+    
+        <form action="./admin/doAdminAction.php?act=loginUser" method="post">
+        <div id="loginform" class="loginform n">
+            <div>
+                <div class="loginformfield">
+                    <span class="form-icon"><img src="images/logo-50-50.jpg"></span>
+                </div>
+                <div class="loginformfield">
+                    <span class="form-title">
+                    <h2>登录</h2>
+                    </span>
+                </div>
+                <div class="loginformfield">
+                    <label class="field-name">用户账号:</label>
+                    <input id="phone-1" name="username" placeholder="请输入您的用户账号">
+                    <div class="loginformfield-hint form-error">
+                        <span id="login-phone-error"></span>
+                    </div>
+                </div>
+                <div class="loginformfield">
+                    <label class="field-name">用户密码:</label>
+                    <input id="login-pwd" type="password" name="password" placeholder="请输入您的用户密码">
+                    <div class="loginformfield-hint form-error">
+                        <span id="login-pwd-error"></span>
+                    </div>
+                </div> 
+            </div>
+            <div class="loginform-buttons">
+                <input type="submit" id="checkin" class="save-btn" value="登录" />
+                <span >还没有账号？<a id="register">创建一个</a></span>
+            </div> 
+        </div>
+        </form>
+        
+        <form action="./admin/doAdminAction.php?act=addUser" method="post">
+        <div id="registerform" class="registerform n">
+            <div>
+                <div class="loginformfield">
+                    <span class="form-icon"><img src="images/logo-50-50.jpg"></span>
+                </div>
+                <div class="loginformfield">
+                    <span class="form-title">
+                    <h2>创建新账号</h2>
+                    </span>
+                </div>
+                <div class="loginformfield">
+                    <label class="field-name">手机号:</label>
+                    <input id="phone-2" name="userPhone" placeholder="请输入您的手机号">
+                    <div class="loginformfield-hint form-error">
+                        <span id="register-phone-error"></span>
+                    </div>
+                </div>
+                <div class="loginformfield field-confirm-code">
+                    <label class="field-name">用户名:</label> 
+                    <input id="register-confirm-code" name="username" placeholder="请输入用户名">
+                    <div class="loginformfield-code-hint form-error">
+                        <span id="register-code-error"></span>
+                    </div>
+                </div> 
+                <div class="loginformfield">
+                    <label class="field-name">密码:</label> 
+                    <input id="register-pwd" name="password" type="password" placeholder="请输入6位以上字母或数字密码">
+                    <div class="loginformfield-hint form-error">
+                        <span id="register-pwd-error"></span>
+                    </div>
+                </div>  
+                <div class="loginformfield">
+                    <label class="field-name">住址:</label> 
+                    <input id="register-pwd2" name="userHome" placeholder="请输入住址">
+                    <div class="loginformfield-hint form-error">
+                        <span id="register-pwd2-error"></span>
+                    </div>
+                </div> 
+            </div>
+            <div class="loginform-buttons">
+                <input id="create" type="submit" class="save-btn" value="创建" />
+                <span >已经有账号？<a id="login">登录</a></span>
+            </div> 
+        </div>
+        </form>
+        <a class="close-reveal-modal"><img src="images/icon_close.png" height="24" width="24"></a>
+    </div>

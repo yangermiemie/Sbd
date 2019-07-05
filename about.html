@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <script src="scripts/jquery-1.8.3.js"></script>
+        <script src="scripts/jquery.reveal.js"></script>
+        <script src="scripts/jquery.cookie.js"></script>
+        <script src="scripts/baidu_js_push.js"></script>
+        <script src="scripts/common.js"></script>
+        <link rel="icon" href="images/favicon.ico" type="image/x-icon" />
+        <link rel="stylesheet" href="style/reset.css">
+        <link rel="stylesheet" href="style/common.css">
+        <link rel="stylesheet" href="style/base.css"> 
+        <link rel="stylesheet" href="style/header.css">
+        <link rel="stylesheet" href="style/shopcart.css"> 
+        <link rel="stylesheet" href="style/footer_1.css"> 
+        <link rel="stylesheet" href="style/reveal.css">
+        <link rel="stylesheet" href="style/login.css">
+        <link rel="stylesheet" href="style/about.css">
+        <title>随便点儿</title>
+    </head>
+    <body>
+
+        <!--header部分-->
+        <div class="header shadow">
+            <div class="search-result"> 
+            </div>
+            <div class="header-left fl">
+                <div class="icon fl"></div>
+                <a class="logo" href="index.php"></a>
+                <div class="search">
+                <img class="search-icon" src="images/icon_search.png" width="22" height="22">
+                <input id="search-input" class="search-input" type="text" placeholder="请输入地名" onkeypress="onKeySearch()">
+                <span id="search-del" class="search-del">&times;</span> 
+                </div>
+                <div class="clear"></div>
+            </div>
+            <div class="header-right fr">
+                <div class="login fl">
+
+                    <span class="header-operater">
+                    <a href="shop.php">外卖</a>
+                    <a href="account/order.php">我的订单</a>
+                    <a href="about.html?p=lianxiwomen">联系我们</a> 
+                    </span> 
+                </div>
+                <div id="cart" class="cart fr"> 
+                    <img class="cart-icon" src="images/icon_cart_22_22.png">
+                </div>
+                <div id="user" class="user fr n">
+                    <img class="user-icon" src="images/icon_my.png"> 
+                </div> 
+            </div> 
+        </div>
+        <!--内容部分-->
+        <div class="about-content">   
+            <div class="about-header">
+                <div class="header-text-bg">
+                </div>
+            </div>
+            <div class="about-nav">
+                <div class="nav">
+                <ul>
+                    <li><a forward="guanyuwomen" class="static">关于我们</a></li>
+                    <li><a forward="lianxiwomen" class="static">联系我们</a></li>
+                    <li><a forward="tousujianyi" class="static">投诉建议</a></li>
+                    <li><a forward="jiaruwomen" class="static">加入我们</a></li>
+                    <li><a forward="shangjiaruzhu" class="static">商家入驻</a></li>
+                </ul>
+                </div>
+            </div>
+
+            <div class="about-body"> 
+                <!--关于我们-->
+                <div id="guanyuwomen" class="body-wrap n">
+                    <div class="body-header">
+                        <span>随便点儿</span>
+                    </div>
+                    <div class="body-content">
+                        <span>
+                        <p class="introduction">
+                        “随便点儿”是一个在线点餐平台 
+                        </p>
+                        <h3>发展历程</h3>
+                        <div class="history">
+                        2017年11月 “随便点儿”立项<br>
+                        2017年11月 “随便点儿”网站上线
+                        <a href="http://wesbd.xszz.gq" style="color:blue;">http://wesbd.xszz.gq</a>
+                        </div>
+                    </div>
+                </div>
+                <!--联系我们--> 
+                <div id="lianxiwomen" class="body-wrap n"> 
+                    <div class="body-header">
+                        <span>联系我们</span>
+                    </div>
+                    <div class="body-content">
+                        <span class="bft"> 
+                        <p>客服微信：廖阳</p>
+                        </span>
+
+                    </div>
+                </div> 
+                <!--投诉建议--> 
+                <div id="tousujianyi" class="body-wrap n">
+                    <div class="body-header">
+                        <span>投诉建议</span>
+                    </div>
+                    <div class="body-content">
+                        <span class="bft">任何问题和建议，可以告诉我们哦~</span>
+                        <span>
+                        <textarea id="tousu-txt" maxLength="150"/></textarea>
+                        </span>
+                        <span class="paddingTB-20">
+                            <a id="tousu-commit" class="btn-commit">提交</a>
+                        </span>
+                    </div> 
+                </div>
+                <!--加入我们--> 
+                <div id="jiaruwomen" class="body-wrap n">
+                    <div class="body-header">
+                        <span>加入我们</span>
+                    </div>
+                    <div class="body-content">
+                        <span class="bft">暂无招聘计划</span>
+                    </div>  
+                </div>
+                <!--商家入驻--> 
+                <div id="shangjiaruzhu" class="body-wrap n">
+                    <div class="body-header">
+                        <span>商家入驻</span>
+                    </div>
+                    <div class="body-content">
+                        <span class="bft">您好，随便点儿正在需要寻找更多的外卖店，他需要味道好，服务好，干净卫生，价格合理，当然最好是中式快餐哦，如果您有合适的餐馆推荐，一定要告诉我们哦~我们会去沟通考察。</span>
+                        <div class="shangjiaruzhu"> 
+                            <span><label class="bft">餐馆名称：  </label><input id="hotelName" maxlength="20"></span>
+                            <span><label class="bft">联系电话：  </label><input id="hotelPhone" maxlength="20"></span>
+                            <span><label class="bft">餐馆位置：  </label><input id="hotelLocation" maxlength="30"></span>
+                            <span><label class="bft">简单介绍：  </label><input id="hotelIntroduction" maxlength="100"></span>
+                            <span><a id="hotel-commit" class="btn-commit">提交</a></span>
+                        </div>
+                    </div>   
+                </div>
+            </div> 
+
+        <div class="footer-wrap">
+            <div class="footer-content">
+                  <div class="footer-content-entrance">
+                    <a class="footer-content-link" href="about.html?p=guanyuwomen">关于我们</a>
+                    <span class="footer-content-separator">|</span>
+                    <a class="footer-content-link footer-content-weixing">关注微信
+                    <img class="weixin-pic" src="images/qr_code.jpg">
+                    </a>
+                    <span class="footer-content-separator">|</span> 
+                    <a class="footer-content-link" href="about.html?p=tousujianyi">投诉建议</a>
+                    <span class="footer-content-separator">|</span>
+                    <a class="footer-content-link kaidian_address" href="about.html?p=shangjiaruzhu">商家入驻</a>
+
+                  </div>
+            </div>
+        </div>
+            
+        </div>
+            <div class="shop-cart shadow n">
+                <div class="shop-head">
+                    购物车<a class="shop-clear">[清空]</a>
+                </div>
+                <div class="shop-body">    
+                    
+
+                    <div class="isnull">
+                        <span></span>
+                        <b>购物车空空如也</b>
+                    </div>
+                </div>
+                <div class="shop-bottom">
+                    <div class="bottom-price fl">总计：￥<label>32</label>
+                    </div>
+                    <div class="bottom-icon"></div>
+                    <div class="bottom-pay fr">
+                        <a id="cart-pay">结算</a>
+                    </div>
+                </div>
+        </div> 
+    </div>
+    <script src="scripts/md5.js"></script>
+    <script src="scripts/myInfo.js"></script>
+    <script src="scripts/login.js"></script>
+    <script src="scripts/cart.lib.js"></script>
+    <script src="scripts/cart.js"></script>
+    <script src="scripts/header.js"></script> 
+    <script src="scripts/footer.js"></script>
+    <script src="scripts/about.js"></script>
+    <script type="text/javascript">
+                $(function(){
+
+                    //获取url跳转参数
+                    var name=getUrlParam('p');
+                    if(name){
+                        $(".nav a[forward="+name+"]").addClass('active');
+                        $('.body-wrap').hide();
+                        $("#"+name).fadeIn(300); 
+                    }
+
+                    //导航切换
+                    $(".nav a").click(function() { 
+                        var forward=$(this).attr('forward');
+                        location.href = "about.html?p="+forward;
+                    });
+
+                    //初始化购物车
+                    initCart();
+
+                    //footer
+                    processFooter();
+
+                    //地址悬浮
+                    $(".place-cc a,.place-nav").hover(function() { 
+                        $('.place-nav').show();
+                    }, function() {
+                    $('.place-nav').hide();
+                    });
+                    
+                    //购物车相关 
+                    var shopCartWidth=$(".shop-cart").width(); 
+                    //默认隐藏购物车
+                    $(".shop-cart,.shop-bottom").css("right",-shopCartWidth); 
+                    var mRight=-shopCartWidth;
+                    
+                    $("#cart").click(function(){
+                        $('.shop-cart').show(); 
+                        //适配购物车
+                        processShopItem();
+                        
+                        shopCartWidth=$(".shop-cart").width();
+                        if(mRight=='0px'){
+                            mRight=-shopCartWidth;
+                            $(".shop-cart,.shop-bottom").animate({right:mRight},200);
+                        }
+                        else{
+                            mRight='0px';
+                            $(".shop-cart,.shop-bottom").animate({right:mRight},200);
+                        }
+                    });
+                    
+                    //中间高 
+                    var zw=$(window).width();
+                    var middleWidth=$('.place-wrap').width();
+                    var middleHeight=$('.place-wrap').height();
+                    var marginLeft=(zw-middleWidth)/2; 
+                    $(".place-wrap-1").css("marginLeft",marginLeft); 
+                    $(".place-wrap-1").show(); 
+
+                    //地址选择悬浮
+                    $(".place-nav").css("left",marginLeft+32);//再加32
+                    //地址点击
+                    $('.city').click(function(event) {
+                        if($(this).text()!="济南"){ 
+                         alert("未开通");
+                        }else{
+                            window.location.reload();
+                        }
+                    });
+
+                    //弹出动画
+                    $(".place-wrap").animate({"opacity":"0.9"}, 200);
+
+                    $(window).resize(function(){
+                        //中间高 
+                        var zw=$(window).width();
+                        var middleWidth=$('.place-wrap').width();
+                        var middleHeight=$('.place-wrap').height();
+                        var marginLeft=(zw-middleWidth)/2; 
+                        $(".place-wrap-1").css("marginLeft",marginLeft); 
+                        //地址选择悬浮
+                        $(".place-nav").css("left",marginLeft+32);
+
+                        //适配购物车
+                        processShopItem();
+
+                        $('.shop-cart').hide();
+                        var shopCartWidth=$(".shop-cart").width(); 
+                        //默认隐藏购物车
+                        $(".shop-cart,.shop-bottom").css("right",-shopCartWidth); 
+                        mRight=-shopCartWidth;
+
+                        processFooter();
+                    });
+
+                        //tab点击事件
+                        $('.place-tab a').click(function(){
+                            //变样式
+                            var cl=$(this).parents('.place-tab').find('a');
+                            cl.removeClass('alive');
+                            $(this).addClass('alive');
+                            var pid=$(this).attr('id');
+                            $('.place-names').hide();
+                            var n="#"+pid.replace('t','n');
+                            $(n).show();
+                        });
+                    });
+
+                    function processFooter(){
+                        $(".footer-content").show();
+                    }
+
+
+                    //获取url跳转参数 
+                    function getUrlParam(name) {
+                      var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)");  
+                      var r = window.location.search.substr(1).match(reg); //匹配目标参数
+                      if (r != null) return unescape(r[2]); return null; //返回参数值
+                    }
+    </script>
+</body>
+</html>
